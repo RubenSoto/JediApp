@@ -89,8 +89,10 @@ public class ProfileFragment extends Fragment {
         mImageAvatar = (ImageView) rootView.findViewById(R.id.profile_picture);
         realm = Realm.getInstance(config);
         List<User> users = realm.where(User.class).equalTo("name",userName).findAll();
-        if(users.size() > 0)
+        if(users.size() > 0) {
+            user = users.get(0);
             mImageAvatar.setImageBitmap(BitmapFactory.decodeByteArray(users.get(0).getImage(), 0, users.get(0).getImage().length));
+        }
         getBestIntent(userName);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getLocation();
@@ -190,14 +192,13 @@ public class ProfileFragment extends Fragment {
                 if (null != selectedImageUri) {
                     mImageAvatar.setImageURI(selectedImageUri);
                     realm = Realm.getInstance(config);
-                    realm =
                     realm.beginTransaction();
                     Bitmap bitmap = ((BitmapDrawable)mImageAvatar.getDrawable()).getBitmap();
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byte[] bitmapdata = stream.toByteArray();
-                    realm.copyToRealmOrUpdate(new User(mNameEditText.getText().toString(), mPasswordEditText.getText().toString(),bitmapdata, false));
-                    startActivity(intentChangeToLogin);
+                    user.setImage(bitmapdata);
+                    realm.copyToRealmOrUpdate(user);
                     realm.commitTransaction();
                 }
 

@@ -65,8 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
                         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                         byte[] bitmapdata = stream.toByteArray();
                         realm.copyToRealmOrUpdate(new User(mNameEditText.getText().toString(), mPasswordEditText.getText().toString(),bitmapdata, false));
-                        startActivity(intentChangeToLogin);
                         realm.commitTransaction();
+                        startActivity(intentChangeToLogin);
                     }
                 }
             }
