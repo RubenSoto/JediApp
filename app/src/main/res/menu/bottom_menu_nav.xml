@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_mem_game"
+        android:title="@string/memory_game_tab_name"
+        android:icon="@drawable/ic_gamepad_variant_white_48dp"
+        />
+    <item
+        android:id="@+id/action_rank"
+        android:title="@string/ranking_tab_name"
+        android:icon="@drawable/ic_chart_line_white_48dp"
+        />
+    <item
+        android:id="@+id/action_music"
+        android:title="@string/music_tab_name"
+        android:icon="@drawable/ic_music_note_white_48dp"
+        />
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/profile_tab_name"
+        android:icon="@drawable/ic_account_white_48dp"
+        />
+    <item
+        android:id="@+id/action_calculator"
+        android:title="@string/calculator_tab_name"
+        android:icon="@drawable/ic_calculator_white_48dp"
+        />
+</menu>

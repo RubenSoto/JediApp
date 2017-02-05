@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rubn.jediapp.fragments.ProfileFragment">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <ImageButton
+            android:id="@+id/profile_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user"
+            android:backgroundTint="@color/fbutton_color_clouds"
+            android:adjustViewBounds= "true"
+            android:maxHeight="@dimen/profile_max_pic_dim"
+            android:minHeight="@dimen/profile_max_pic_dim"
+            />
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/memTextSize"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/profile_best_intents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/memTextSize"
+            android:textAlignment="center"
+            android:text="@string/profile_best"/>
+        <TextView
+            android:id="@+id/profile_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/memTextSize"
+            android:textAlignment="center"
+            android:text="@string/profile_nowhere"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calc_menu_call"
+        android:title="@string/calc_toolbar_call"
+        />
+    <item
+        android:id="@+id/calc_menu_nav"
+        android:title="@string/calc_toolbar_navigator"
+        />
+    <item
+        android:id="@+id/calc_menu_logout"
+        android:title="@string/toolbar_logout"/>
+</menu>

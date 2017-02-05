@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">JediApp</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!--Register-->
+    <string name="register_text_name">Name:</string>
+    <string name="register_text_password">Password:</string>
+    <string name="alert_dialog_register_msg">Name not available. Think another one or lkfajld like everyone else</string>
+    <string name="alert_dialog_register_ok">OK</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="memory_game_tab_name">Game</string>
+    <string name="ranking_tab_name">Ranking</string>
+    <string name="music_tab_name">Music</string>
+    <string name="profile_tab_name">Profile</string>
+    <string name="calculator_tab_name">Calculator</string>
+
+    <!-- Calc buttons strings -->
+    <string name="calc_c">C</string>
+    <string name="calc_erase">&lt;&lt;</string>
+    <string name="calc_division">/</string>
+    <string name="calc_mult">x</string>
+    <string name="calc_summ">+</string>
+    <string name="calc_minus">-</string>
+    <string name="calc_equal">=</string>
+    <string name="calc_9">9</string>
+    <string name="calc_8">8</string>
+    <string name="calc_7">7</string>
+    <string name="calc_6">6</string>
+    <string name="calc_5">5</string>
+    <string name="calc_4">4</string>
+    <string name="calc_3">3</string>
+    <string name="calc_2">2</string>
+    <string name="calc_1">1</string>
+    <string name="calc_0">0</string>
+    <string name="calc_dot">.</string>
+    <string name="alert_dialog_calc_ok">OK</string>
+    <string name="alert_dialog_calc">Math Error! Learn math before using a calculator. Thx :)</string>
+    <string name="calc_toolbar_call">Call</string>
+    <string name="calc_toolbar_navigator">Open Navigator</string>
+
+    <!--Login-->
+    <string name="log_in">Log in</string>
+    <string name="register">Register</string>
+    <string name="alert_dialog_login_msg">Name or password incorrect. \nTip: Write down the user next time</string>
+    <string name="alert_dialog_login_ok">OK</string>
+
+    <!--Memory game-->
+    <string name="memory_intents">Intents: </string>
+    <string name="memory_loser_text">LOSER!</string>
+    <string name="toolbar_mem_reset">Reset</string>
+    <string name="alert_dialog_mem_ok">Unistall</string>
+    <string name="alert_dialog_mem">You have found all the pairs!\nNow, you can play the game of pairs of life.</string>
+
+    <!-- Ranking -->
+    <string name="toolbar_rank_reset">Reset</string>
+
+    <string name="toolbar_logout">Logout</string>
+
+    <!-- Profile -->
+    <string name="profile_best">Best Intent:</string>
+    <string name="profile_nowhere">Nowhere</string>
+
+
+</resources>

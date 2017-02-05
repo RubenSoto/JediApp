@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rubn.jediapp">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/sea_bottom"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.RegisterActivity"
+            android:theme="@style/RedAppTheme"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3deebbf99b739d1dd4f8a612a4accf8456cdb593" />
+
+        <service
+            android:name=".service.MediaPlayerService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

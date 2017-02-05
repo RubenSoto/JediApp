@@ -1,0 +1,33 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_elevation">6dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Calculator -->
+    <!-- Portrait -->
+    <dimen name="calc_result_text_size">70sp</dimen>
+    <dimen name="padding_calc_result">10dp</dimen>
+    <dimen name="calc_text_size">30sp</dimen>
+    <dimen name="calc_padding_button">10dp</dimen>
+    <!-- Landscape -->
+    <dimen name="calc_result_land_text_size">30sp</dimen>
+    <dimen name="padding_calc_land_result">3dp</dimen>
+    <dimen name="calc_text_land_size">10sp</dimen>
+    <dimen name="calc_text_land_half_size">5sp</dimen>
+    <dimen name="calc_padding_land_button">3dp</dimen>
+
+    <!-- Login -->
+    <dimen name="margin_button_login">70dp</dimen>
+    <dimen name="minHeightLogin">60dp</dimen>
+
+    <!-- Ranking -->
+    <dimen name="minHeightRankingRow">50dp</dimen>
+
+    <!-- Memory -->
+    <dimen name="memTextSize">20sp</dimen>
+
+    <!--Profile-->
+    <dimen name="profile_max_pic_dim">200dp</dimen>
+
+</resources>
