@@ -1,5 +1,6 @@
 package com.rubn.jediapp.fragments;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,6 +30,7 @@ public class MusicFragment extends Fragment {
     private Intent mIntentMusic;
     private ImageButton mButtonPlay;
     private ImageButton mButtonStop;
+    private boolean bStartedService = false;
 
     public MusicFragment() {
         // Required empty public constructor
@@ -46,25 +48,28 @@ public class MusicFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_music, container, false);
         ButterKnife.bind(this,rootView);
         setHasOptionsMenu(true);
+        mIntentMusic = new Intent(getActivity(), MediaPlayerService.class);
         mButtonPlay = (ImageButton) rootView.findViewById(R.id.music_play);
         mButtonStop = (ImageButton) rootView.findViewById(R.id.music_stop);
-        //mButtonStop.setVisibility(View.INVISIBLE);
+        mButtonStop.setVisibility(View.INVISIBLE);
         mButtonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mButtonPlay.setVisibility(View.INVISIBLE);
-                mButtonStop.setVisibility(View.VISIBLE);*/
-                mIntentMusic = new Intent(getActivity(), MediaPlayerService.class);
-                getActivity().startService(mIntentMusic);
-
+                mButtonPlay.setVisibility(View.INVISIBLE);
+                mButtonStop.setVisibility(View.VISIBLE);
+                if(!bStartedService) {
+                    bStartedService = true;
+                    getActivity().startService(mIntentMusic);
+                }
             }
         });
 
         mButtonStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* mButtonPlay.setVisibility(View.VISIBLE);
-                mButtonStop.setVisibility(View.INVISIBLE);*/
+                mButtonPlay.setVisibility(View.VISIBLE);
+                mButtonStop.setVisibility(View.INVISIBLE);
+                bStartedService = false;
                 getActivity().stopService(mIntentMusic);
             }
         });
@@ -98,6 +103,13 @@ public class MusicFragment extends Fragment {
 
     @Override
     public void onDetach() {
+        getActivity().stopService(mIntentMusic);
         super.onDetach();
+    }
+
+    @Override
+    public void onDestroy() {
+        getActivity().stopService(mIntentMusic);
+        super.onDestroy();
     }
 }

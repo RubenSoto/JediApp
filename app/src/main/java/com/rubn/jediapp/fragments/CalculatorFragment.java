@@ -1,5 +1,7 @@
 package com.rubn.jediapp.fragments;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,7 +9,10 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rubn.jediapp.R;
 import com.rubn.jediapp.activities.LoginActivity;
@@ -25,7 +31,9 @@ import com.rubn.jediapp.calculator.Operands;
 
 import butterknife.ButterKnife;
 
+import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.NaN;
+import static java.lang.Double.POSITIVE_INFINITY;
 
 
 public class CalculatorFragment extends Fragment {
@@ -52,6 +60,8 @@ public class CalculatorFragment extends Fragment {
     private Button mButton9;
     private TextView mTextResult;
     private Calculator mCalculator;
+    private SharedPreferences settings;
+    private SharedPreferences.Editor editor;
 
     public CalculatorFragment() {
         // Required empty public constructor
@@ -206,28 +216,52 @@ public class CalculatorFragment extends Fragment {
         });
     }
     private void setTextResult(double result){
-        if(result == NaN)
-            createAlertDialog();
+        if(result == NaN || result == POSITIVE_INFINITY || result == NEGATIVE_INFINITY)
+        {
+            SharedPreferences settings = getActivity().getSharedPreferences(ALREADY_LOGGED, Context.MODE_PRIVATE);
+            if(settings.getBoolean("StateNotification", false))
+                createNotification();
+            else
+                createToast();
+        }
         else {
             if (result % 1 == 0)
                 mTextResult.setText(String.valueOf((int) result));
             else
                 mTextResult.setText(String.valueOf(result));
         }
-
     }
-    private void createAlertDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.alert_dialog_calc)
-                .setCancelable(false)
-                .setNeutralButton(R.string.alert_dialog_calc_ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        setTextResult(mCalculator.setDelete());
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
+    private void createNotification()
+    {
+        //Instanciamos Notification Manager
+        NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Para la notificaciones, en lugar de crearlas directamente, lo hacemos mediante
+        // un Builder/contructor.
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(getActivity())
+                        .setSmallIcon(R.drawable.dice)
+                        .setContentTitle("Math Error!")
+                        .setContentText(getResources().getString(R.string.alert_dialog_calc));
+        // Creamos un intent explicito, para abrir la app desde nuestra notificación
+        Intent resultIntent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+        //Generamos la backstack y le añadimos el intent
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(getActivity());
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(resultIntent);
+        //Obtenemos el pending intent
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+
+        mBuilder.setContentIntent(resultPendingIntent);
+        mNotificationManager.notify(0, mBuilder.build());
+    }
+
+    private void createToast(){
+        Toast.makeText(getActivity().getApplicationContext(), getString(R.string.alert_dialog_calc), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -246,11 +280,23 @@ public class CalculatorFragment extends Fragment {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")));
                 break;
             case R.id.calc_menu_logout:
-                SharedPreferences settings = getActivity().getSharedPreferences(ALREADY_LOGGED,0);
-                SharedPreferences.Editor editor = settings.edit();
+                settings = getActivity().getSharedPreferences(ALREADY_LOGGED,0);
+                editor = settings.edit();
                 editor.putBoolean("Logged", false);
                 editor.apply();
                 startActivity(new Intent(getActivity(), LoginActivity.class));
+                break;
+            case R.id.calc_menu_toast:
+                settings = getActivity().getSharedPreferences(ALREADY_LOGGED,0);
+                editor= settings.edit();
+                editor.putBoolean("StateNotification", false);
+                editor.apply();
+                break;
+            case R.id.calc_menu_state_notification:
+                settings = getActivity().getSharedPreferences(ALREADY_LOGGED,0);
+                editor= settings.edit();
+                editor.putBoolean("StateNotification", true);
+                editor.apply();
                 break;
         }
         return super.onOptionsItemSelected(item);

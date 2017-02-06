@@ -7,18 +7,19 @@
 
     <LinearLayout
         android:id="@+id/layout_calc_result"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="end"
-        android:padding="@dimen/padding_calc_land_result">
+        android:gravity="end">
         <TextView
+            android:id="@+id/calc_text_result"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/calc_result_land_text_size"
-            android:text="@string/calc_0" />
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:text="@string/calc_0"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/layout_calc_buttons"
         android:layout_width="match_parent"
@@ -35,43 +36,43 @@
                 android:id="@+id/btn_calc_delete"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_c"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
 
             <Button
                 android:id="@+id/btn_calc_division"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_division"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_mult"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_mult"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_erase"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_erase"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout_calc_row_1"
@@ -83,32 +84,32 @@
                 android:id="@+id/btn_calc_7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_7"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_8"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_9"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_minus"
                 android:layout_width="match_parent"
@@ -117,7 +118,7 @@
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_minus"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
+                android:textSize="10sp"
                 android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
@@ -130,42 +131,42 @@
                 android:id="@+id/btn_calc_4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_4"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_5"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_6"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_summ"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_summ"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="2" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout_calc_row_3"
@@ -177,41 +178,45 @@
                 android:id="@+id/btn_calc_1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_1"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_2"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:text="@string/calc_3"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_empty_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layout_calc_row_4"
@@ -219,45 +224,49 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="1">
-            <Button
-                android:id="@+id/btn_calc_0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@color/colorBtnBkg"
-                android:text="@string/calc_0"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/btn_calc_point"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
-                android:text="@string/calc_dot"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
+            <Button
+                android:id="@+id/btn_calc_0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBtnBkg"
+                android:text="@string/calc_0"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_empty_4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkg"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
             <Button
                 android:id="@+id/btn_calc_equal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:background="@color/colorBtnBkgDark"
                 android:text="@string/calc_equal"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/calc_text_land_size"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:padding="@dimen/calc_padding_button"
+                android:textStyle="bold"
+                android:layout_weight="2" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -41,6 +41,8 @@
     <string name="alert_dialog_calc">Math Error! Learn math before using a calculator. Thx :)</string>
     <string name="calc_toolbar_call">Call</string>
     <string name="calc_toolbar_navigator">Open Navigator</string>
+    <string name="calc_toolbar_toast">Toast</string>
+    <string name="calc_toolbar_state_noti">State Notification</string>
 
     <!--Login-->
     <string name="log_in">Log in</string>
